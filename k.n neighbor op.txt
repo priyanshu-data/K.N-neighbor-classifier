@@ -1,0 +1,39 @@
+table(wbcd$diagnosis)
+
+  B   M 
+357 212 
+
+
+ Benign Malignant 
+     62.7      37.3 
+
+
+> #test normalization function - result should be identical 
+> normalize(c(1,2,3,4,5))
+[1] 0.00 0.25 0.50 0.75 1.00
+> normalize(c(10,20,30,40,50))
+[1] 0.00 0.25 0.50 0.75 1.00
+
+
+
+summary(wbcd_n$area_mean)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.1174  0.1729  0.2169  0.2711  1.0000 
+
+
+Total Observations in Table:  100 
+
+ 
+                 | wbcd_test_pred 
+wbcd_test_labels |    Benign | Malignant | Row Total | 
+-----------------|-----------|-----------|-----------|
+          Benign |        61 |         0 |        61 | 
+                 |     0.610 |     0.000 |           | 
+-----------------|-----------|-----------|-----------|
+       Malignant |         2 |        37 |        39 | 
+                 |     0.020 |     0.370 |           | 
+-----------------|-----------|-----------|-----------|
+    Column Total |        63 |        37 |       100 | 
+-----------------|-----------|-----------|-----------|
+
+ 
